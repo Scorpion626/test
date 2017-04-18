@@ -1,0 +1,2 @@
+//include 2.js
+include('<!-- @env site | 'assets/javascript/site.js' -->');

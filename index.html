@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      link.href = link.href.split('?')[0]+'?'+(new Date()).getTime()
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+    <title>Things for Designers</title>
+    <link href='assets/stylesheets/normalize.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/main.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/animate.css' media='screen' rel='stylesheet' type='text/css' />
+    <script src='assets/javascripts/jquery-1.9.0.min.js' type='text/javascript'></script>
+    <script src=<!-- @env site | 'assets/javascripts/include2.js' --> type='text/javascript'></script> 
+    <meta charset='utf-8' />
+    <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
+    <link href='assets/images/favicon.png' rel='icon' type='image/png' />
+    <link href='assets/images/favicon.ico' rel='icon' type='image/x-icon' />
+    <meta content='Things for Designers' property='og:title' />
+    <meta content='website' property='og:type' />
+    <meta content='http://thingsfordesigners.com' property='og:url' />
+    <meta content='assets/images/facebook.png' property='og:image' />
+    <meta content='Things for Designers' property='og:site_name' />
+    <meta content='734285393' property='fb:admins' />
+    <script src='//use.typekit.net/ubg0ibb.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        try{Typekit.load();}catch(e){}
+      //]]>
+    </script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
+        analytics.load("tprdmhecsb");
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <header>
+        <div class='logo'>Things for Designers</div>
+        <h1>Things for Designers</h1>
+        <p>Curated inspiration for designers. Coming soon.</p>
+        <form action='http://awkward.createsend.com/t/j/s/djuitr/' id='subForm' method='post'>
+          <input name='cm-djuitr-djuitr' placeholder='Email address' type='email' />
+          <button id='campaignmonitor-btn' name='campaignmonitor-btn'>Notify me</button>
+        </form>
+      </header>
+      <footer>
+        <div class='social'>
+          <div class='follow'>
+            <a class='twitter-follow-button' data-lang='en' data-show-count='false' data-width='160px' href='https://twitter.com/thingsfordesign'>Follow @thingsfordesign</a>
+            <script type='text/javascript'>
+              //<![CDATA[
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              //]]>
+            </script>
+          </div>
+          <div class='tweet'>
+            <a class='twitter-share-button' data-dnt='true' data-text='Coming soon. Curated inspiration for designers.' data-via='thingsfordesign' href='https://twitter.com/share' style='width: auto;'>Tweet</a>
+            <script type='text/javascript'>
+              //<![CDATA[
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              //]]>
+            </script>
+          </div>
+        </div>
+      </footer>
+    </div>
+<p> here is env!!! <!-- @env sdad --> </p>
+<p> and her is the  env <!-- @env ss | 'http:\\asdasdas' --> </p>
+<p> and her is the  env <!-- @env ss --> </p>
+<p> and her is the  env <!-- @env sdad | 'http:\\asdasdas' --> </p>
+<p> and her is the second env with spaces and without env
+    <!-- @env  | http:\\asdasdas sdas dasd aasda ad adasd <br>
+     s --> </p>
+<p> and her is the env with spaces
+    <!-- @env  | http:\\asdasdas sdas dasd aasda ad adasd <br>
+     s --> </p>
+  </body>
+</html>
